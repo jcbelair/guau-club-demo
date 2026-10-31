@@ -1,0 +1,94 @@
+/* ============================================================
+   Recorrido 3D — capa de interfaz
+   ============================================================ */
+.journey{position:relative;height:820vh;background:var(--forest);color:var(--bone)}
+.journey-sticky{position:sticky;top:0;height:100svh;overflow:hidden;isolation:isolate}
+#scene{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
+.j-grain,.j-vignette{position:absolute;inset:0;pointer-events:none}
+.j-vignette{
+  background:
+    radial-gradient(120% 78% at 50% 46%,transparent 42%,rgba(8,14,10,.42) 100%),
+    linear-gradient(180deg,rgba(8,14,10,.5) 0%,transparent 22%,transparent 62%,rgba(8,14,10,.66) 100%);
+}
+.j-grain{
+  opacity:.055;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.7'/></svg>");
+  background-size:160px 160px;
+}
+.j-ui{
+  position:absolute;inset:0;z-index:3;display:grid;grid-template-rows:auto 1fr auto;
+  padding:clamp(74px,11vh,104px) var(--pad) clamp(22px,4vh,40px);pointer-events:none;
+}
+.j-ui button,.j-ui a{pointer-events:auto}
+.j-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.j-label{margin:0;display:flex;align-items:center;gap:10px}
+.j-dot{width:5px;height:5px;border-radius:50%;background:var(--gold-2);box-shadow:0 0 0 4px rgba(217,190,134,.18);animation:pulse 2.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.j-top-right{display:flex;align-items:center;gap:16px}
+.j-count{font-family:var(--serif);font-style:italic;font-size:14px;letter-spacing:.14em;color:rgba(251,248,242,.72)}
+.j-mid{display:flex;align-items:flex-end;justify-content:flex-start}
+.j-card{
+  width:min(430px,100%);padding:clamp(22px,2.4vw,30px) clamp(22px,2.6vw,32px);
+  background:linear-gradient(180deg,rgba(10,18,14,.46),rgba(10,18,14,.62));
+  border:1px solid rgba(251,248,242,.14);border-left:1px solid rgba(217,190,134,.55);
+  backdrop-filter:blur(12px) saturate(1.1);-webkit-backdrop-filter:blur(12px) saturate(1.1);
+  transition:opacity .45s var(--ease),transform .45s var(--ease);
+}
+.j-card.swap{opacity:0;transform:translateY(10px)}
+.j-card .j-num{font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-2);display:block;margin-bottom:12px}
+.j-card h2{font-size:clamp(27px,3.1vw,40px);line-height:1.04;margin:0 0 10px;letter-spacing:-.01em}
+.j-card h2 em{font-style:italic;color:var(--gold-2)}
+.j-card .j-lead{font-size:13.5px;line-height:1.7;color:rgba(251,248,242,.86);margin:0 0 14px}
+.j-card .j-rule{display:block;width:40px;height:1px;background:rgba(217,190,134,.6);margin:0 0 14px}
+.j-card .j-meta{font-size:11px;line-height:1.7;color:rgba(251,248,242,.62);margin:0 0 18px;letter-spacing:.02em}
+.j-card .j-act{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.j-card .j-more{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2);border-bottom:1px solid rgba(217,190,134,.4);padding-bottom:4px}
+.j-card .j-more:hover{color:#fff;border-color:#fff}
+
+.j-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;position:relative}
+.j-rail{display:flex;flex-direction:column;gap:2px;align-items:flex-start;position:absolute;right:0;bottom:24px}
+.j-rail button{
+  display:flex;align-items:center;gap:12px;padding:6px 0;color:rgba(251,248,242,.55);
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;transition:color .45s,opacity .45s;
+}
+.j-rail button i{display:block;width:16px;height:1px;background:currentColor;transition:width .5s var(--ease)}
+.j-rail button span{font-family:var(--serif);font-style:italic;font-size:12px;letter-spacing:.1em;opacity:.7}
+.j-rail button:hover{color:rgba(251,248,242,.9)}
+.j-rail button[aria-current="step"]{color:#fff}
+.j-rail button[aria-current="step"] i{width:34px;background:var(--gold-2)}
+.j-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(251,248,242,.6);transition:opacity .5s}
+.j-hint i{display:block;width:1px;height:34px;background:linear-gradient(180deg,rgba(251,248,242,.6),transparent);animation:cue 2.6s var(--ease) infinite}
+.j-prog{margin-top:18px;height:1px;background:rgba(251,248,242,.16);width:100%;position:relative;flex:1}
+.j-prog span{position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--gold-2);box-shadow:0 0 14px rgba(217,190,134,.6)}
+
+.j-loader{
+  position:absolute;inset:0;z-index:5;display:grid;place-content:center;justify-items:center;gap:16px;
+  background:linear-gradient(180deg,#1a2b21,#0e1a14);transition:opacity .9s var(--ease),visibility .9s;
+}
+.j-loader.done{opacity:0;visibility:hidden}
+.j-loadmark{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,38px);margin:0;color:var(--bone);letter-spacing:-.01em}
+.j-loadbar{width:min(220px,50vw);height:1px;background:rgba(251,248,242,.16);overflow:hidden}
+.j-loadbar span{display:block;height:100%;width:0;background:var(--gold-2);transition:width .5s var(--ease)}
+
+@media (max-width:900px){
+  .journey{height:700vh}
+  .j-rail{display:none}
+  .j-card{width:100%;max-width:none}
+  .j-card .j-lead{font-size:13px}
+  .j-hint{bottom:18px}
+  .j-prog{margin-top:14px}
+}
+@media (max-width:560px){
+  .j-top-right .j-count{display:none}
+  .j-ui{padding-inline:18px}
+}
+
+/* ---------- lista (fallback / texto) ---------- */
+.lista{background:var(--bone)}
+.lista-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,44px) clamp(24px,4vw,60px);margin-top:44px}
+.lista-item{border-top:1px solid var(--line-soft);padding-top:18px}
+.lista-item .n{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--gold);letter-spacing:.1em;display:block;margin-bottom:8px}
+.lista-item h3{font-size:clamp(21px,2vw,27px);margin-bottom:8px}
+.lista-item p{font-size:14px;line-height:1.72;color:#4b544a;margin:0}
+.lista-item a{display:inline-block;margin-top:12px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:3px}
+@media (max-width:760px){.lista-grid{grid-template-columns:1fr}}

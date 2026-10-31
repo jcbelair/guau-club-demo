@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Guau Country Club · Valle de Bravo — Adiestrando ambos lados de la correa</title>
+<meta name="description" content="Guau Country Club, Valle de Bravo. Adiestramiento, hospedaje, guardería, estética canina, restaurante y bar en un entorno natural. Recorre el club en 3D.">
+<meta name="theme-color" content="#14251c">
+<meta property="og:title" content="Guau Country Club · Valle de Bravo">
+<meta property="og:description" content="Un lugar donde tu perro se divierte y aprende, rodeado de naturaleza. Recorre el club en 3D.">
+<meta property="og:image" content="img/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/coa.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.jpg">
+<link rel="stylesheet" href="css/site.css?v=10">
+<link rel="stylesheet" href="css/journey.css?v=10">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+<script>window.__errs=[];addEventListener('error',e=>window.__errs.push(String(e.message||e)));addEventListener('unhandledrejection',e=>window.__errs.push('promise: '+String(e.reason&&e.reason.message||e.reason)));</script>
+</head>
+<body class="loading">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<div id="gate" class="gate" role="status" aria-live="polite">
+  <div class="gate-in">
+    <p class="gate-mark">Guau</p>
+    <p class="gate-sub">Country Club · Valle de Bravo</p>
+    <div class="gate-bar"><span id="gate-prog"></span></div>
+    <p class="gate-txt" id="gate-txt">Abrimos el portón…</p>
+  </div>
+</div>
+
+<div class="progress-top" aria-hidden="true"><span id="progress-top"></span></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Guau Country Club, inicio">
+    <span class="brand-1">Guau</span><span class="brand-2">Country&nbsp;Club · Valle&nbsp;de&nbsp;Bravo</span>
+  </a>
+  <nav class="nav-links" id="nav-links" aria-label="Principal">
+    <a href="#club">El club</a>
+    <a href="#recorrido">Recorrido 3D</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#restaurante">Restaurante</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="nav-act">
+    <button class="sound ghost" id="sound" aria-pressed="false" title="Sonido ambiente">
+      <span class="sound-on" aria-hidden="true">♪</span><span class="sr">Sonido ambiente</span>
+    </button>
+    <a class="btn btn-solid" href="mailto:hola@guau.club?subject=Agendar%20una%20visita%20a%20Guau%20Country%20Club">Agendar visita</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="contenido">
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero" aria-label="Portada">
+  <div class="hero-media">
+    <img src="img/hero.jpg" alt="Un pastor belga corre por el campo frente al club" fetchpriority="high">
+    <span class="hero-scrim"></span>
+  </div>
+  <div class="hero-in">
+    <p class="eyebrow light">Valle de Bravo · Estado de México</p>
+    <h1>Adiestrando<br><em>ambos lados</em><br>de la correa</h1>
+    <p class="hero-lead">¡Guau! Un lugar donde nos podremos divertir y también aprender, rodeados de naturaleza en un ambiente sano y seguro.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="mailto:hola@guau.club?subject=Agendar%20una%20visita">Agendar una visita</a>
+      <a class="btn btn-line light" href="#recorrido">Recorrer el club en 3D</a>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <div class="hero-facts">
+      <p><span>01</span> Adiestramiento con método positivo</p>
+      <p><span>02</span> Hospedaje y guardería en el bosque</p>
+      <p><span>03</span> Restaurante, bar y alberca</p>
+    </div>
+    <a class="scroll-cue" href="#club"><span>Descubrir</span><i></i></a>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-in">
+    <span>Adiestramiento</span><b>·</b><span><em>Hospedaje</em></span><b>·</b><span>Guardería</span><b>·</b><span><em>Estética canina</em></span><b>·</b><span>Restaurante &amp; bar</span><b>·</b><span><em>Alberca</em></span><b>·</b>
+    <span>Adiestramiento</span><b>·</b><span><em>Hospedaje</em></span><b>·</b><span>Guardería</span><b>·</b><span><em>Estética canina</em></span><b>·</b><span>Restaurante &amp; bar</span><b>·</b><span><em>Alberca</em></span><b>·</b>
+  </div>
+</div>
+
+<!-- CLUB / MANIFESTO -->
+<section id="club" class="section club">
+  <div class="wrap">
+    <div class="club-head">
+      <p class="eyebrow reveal">El club</p>
+      <h2 class="reveal">¡En cuanto nos visites, <em>Guau!</em><br>será tu primera expresión.</h2>
+      <p class="lead reveal measure">Un lugar donde nos podremos divertir y también aprender, rodeados de naturaleza en un ambiente sano y seguro. Conoce un verdadero lugar pet friendly.</p>
+    </div>
+    <div class="club-grid">
+      <figure class="ph tall reveal" data-parallax="0.06">
+        <img src="img/puppy.jpg" alt="Un hombre alza a un cachorro en un campo iluminado por el sol" loading="lazy">
+        <figcaption>El vínculo se construye jugando</figcaption>
+      </figure>
+      <div class="club-copy reveal">
+        <p class="eyebrow">Filosofía</p>
+        <h3>En Guau te enseñamos cómo fortalecer el vínculo con tu perro</h3>
+        <p>Aprende las mejores técnicas de adiestramiento: cómo hacer que tu perro se quede en su cama, que no se salga de casa cuando abres la puerta, que venga cuando lo llamas, que no te brinque y muchas otras técnicas que cambiarán tu dinámica del diario por completo.</p>
+        <p>No adiestramos sólo al perro: adiestramos ambos lados de la correa. Cada sesión trabaja la comunicación, los tiempos y la confianza de la familia completa.</p>
+        <ul class="ticks">
+          <li>Personal capacitado y certificado</li>
+          <li>Trabajo en interiores y en el jardín</li>
+          <li>Sesiones privadas y clases grupales</li>
+        </ul>
+        <a class="link-arrow" href="#servicios">Ver servicios del club</a>
+      </div>
+      <figure class="ph reveal" data-parallax="0.12">
+        <img src="img/walk.jpg" alt="Un labrador camina junto a su guía por un sendero" loading="lazy">
+        <figcaption>Paseos y rutas dentro del club</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY 3D -->
+<section id="recorrido" class="journey" aria-label="Recorrido 3D por el club">
+  <div class="journey-sticky">
+    <canvas id="scene" aria-label="Recorrido 3D: un perro camina por el bosque del club hacia el lago de Valle de Bravo" role="img"></canvas>
+    <div class="j-grain" aria-hidden="true"></div>
+    <div class="j-vignette" aria-hidden="true"></div>
+
+    <div class="j-ui">
+      <div class="j-top">
+        <p class="eyebrow light j-label"><span class="j-dot" aria-hidden="true"></span> El recorrido</p>
+        <div class="j-top-right">
+          <span class="j-count" id="j-count">01 / 08</span>
+          <button class="btn btn-line light sm" id="j-list" aria-pressed="false">Ver en lista</button>
+        </div>
+      </div>
+
+      <div class="j-mid">
+        <article class="j-card" id="j-card" aria-live="polite"></article>
+      </div>
+
+      <div class="j-bottom">
+        <nav class="j-rail" id="j-rail" aria-label="Estaciones del recorrido"></nav>
+        <div class="j-hint" id="j-hint"><span>Desliza para caminar</span><i></i></div>
+        <div class="j-prog" aria-hidden="true"><span id="j-prog"></span></div>
+      </div>
+    </div>
+
+    <div class="j-loader" id="j-loader">
+      <p class="j-loadmark">Preparando el bosque</p>
+      <div class="j-loadbar"><span id="j-loadprog"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTA (accesible / fallback) -->
+<section class="section lista" id="lista" aria-label="El recorrido en texto">
+  <div class="wrap">
+    <p class="eyebrow reveal">El recorrido, en palabras</p>
+    <div class="lista-grid" id="lista-grid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="section servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow reveal">El mejor cuidado animal</p>
+      <h2 class="reveal">Servicios del club</h2>
+      <span class="hair reveal"></span>
+    </div>
+    <div class="tiers" id="tiers"></div>
+  </div>
+</section>
+
+<!-- RESTAURANTE -->
+<section id="restaurante" class="band">
+  <div class="band-media" data-parallax="0.14"><img src="img/restaurante.jpg" alt="Barra de madera del restaurante con cervezas servidas" loading="lazy"></div>
+  <span class="band-scrim"></span>
+  <div class="band-in">
+    <p class="eyebrow light reveal">Restaurante &amp; Bar</p>
+    <h2 class="reveal">Desayunos y comidas<br>mientras tu perro <em>aprende</em></h2>
+    <p class="reveal">También tenemos servicio de bar y música para que vengas con tus amig@s. Cocina de casa, producto local y una terraza que da al jardín.</p>
+    <div class="reveal band-cta">
+      <a class="btn btn-gold" href="mailto:hola@guau.club?subject=Reservar%20en%20el%20restaurante">Reservar mesa</a>
+      <a class="btn btn-line light" href="#contacto">Cómo llegar</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="section galeria" aria-label="Galería del club">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow reveal">Un día en Guau</p>
+      <h2 class="reveal">El club, <em>en imágenes</em></h2>
+    </div>
+    <div class="mosaic">
+      <button class="m m1 reveal" data-full="img/alberca.jpg"><img src="img/alberca.jpg" alt="Un perro espera junto a la alberca" loading="lazy"></button>
+      <button class="m m2 reveal" data-full="img/play.jpg"><img src="img/play.jpg" alt="Un perro salta para atrapar una pelota en la hierba" loading="lazy"></button>
+      <button class="m m3 reveal" data-full="img/campus.jpg"><img src="img/campus.jpg" alt="Instalaciones del club al atardecer" loading="lazy"></button>
+      <button class="m m4 reveal" data-full="img/pool.jpg"><img src="img/pool.jpg" alt="Un perro y su guía juegan en el agua" loading="lazy"></button>
+      <button class="m m5 reveal" data-full="img/rest.jpg"><img src="img/rest.jpg" alt="Dos perros descansan en la zona de juegos" loading="lazy"></button>
+      <button class="m m6 reveal" data-full="img/lawn.jpg"><img src="img/lawn.jpg" alt="Un perro pequeño corre por el jardín" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="section diario" aria-label="Testimonios">
+  <div class="wrap diario-grid">
+    <div class="reveal">
+      <p class="eyebrow">Lo que dicen</p>
+      <h2>Historias de<br><em>la manada</em></h2>
+      <p class="muted small measure">Testimonios publicados por los clientes del club.</p>
+    </div>
+    <div class="quotes" id="quotes"></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section contacto">
+  <div class="wrap cont-grid">
+    <div class="reveal">
+      <p class="eyebrow">Reservaciones</p>
+      <h2>Agenda tu <em>visita</em></h2>
+      <span class="hair"></span>
+      <p class="addr">Carretera San Mateo Acatitlán S/N.<br>Col. San Mateo Acatitlán, CP 51200<br>Valle de Bravo, Estado de México<br><small>Entre Barrio 28 y Benicio Casa de Pan</small></p>
+      <div class="cont-links">
+        <a class="btn btn-solid" href="mailto:hola@guau.club?subject=Agendar%20una%20visita">hola@guau.club</a>
+        <a class="btn btn-line dark" href="tel:+525633945903">+52 5633 945903</a>
+      </div>
+      <p class="social"><a href="https://www.instagram.com/guau.by.darwinangulo/" rel="noopener">Instagram</a><a href="https://www.facebook.com/darwinanguloguau" rel="noopener">Facebook</a><a href="https://guau.club/" rel="noopener">guau.club</a></p>
+    </div>
+    <figure class="map reveal">
+      <iframe title="Mapa de Guau Country Club, Valle de Bravo" loading="lazy" src="https://www.google.com/maps?q=San+Mateo+Acatitlan+Valle+de+Bravo&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </figure>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="foot-mark">Guau</p>
+    <div class="foot-cols">
+      <div>
+        <p class="eyebrow">Club</p>
+        <a href="#club">El club</a><a href="#recorrido">Recorrido 3D</a><a href="#servicios">Servicios</a><a href="#restaurante">Restaurante</a>
+      </div>
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <a href="mailto:hola@guau.club">hola@guau.club</a><a href="tel:+525633945903">+52 5633 945903</a><a href="#contacto">Valle de Bravo, MX</a>
+      </div>
+      <div>
+        <p class="eyebrow">Créditos</p>
+        <p class="tiny">Modelo 3D «German Shepard» por Quaternius (Poly Pizza), CC BY 3.0. Escena, tipografía y código realizados para esta demo.</p>
+        <button class="textlink" id="dogtoggle" aria-pressed="false">Compañero del cursor: silueta</button>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p class="tiny">Demostración no oficial · Guau Country Club © 2026. Todos los derechos reservados.</p>
+      <p class="tiny">Concepto y desarrollo: estudio de demo · <span id="clock"></span></p>
+    </div>
+  </div>
+</footer>
+
+<div class="follower" id="follower" aria-hidden="true">
+  <svg viewBox="0 0 64 52" width="52" height="42"><g class="stand"><path class="tail" d="M14 22 C8 18 5 12 7 7" fill="none" stroke-width="4.5" stroke-linecap="round"/><path class="body" d="M14 20 C20 17 36 17 42 18 L46 9 C47 6 50 5 52 7 L54 9 L60 11 C62 12 62 15 60 16 L55 18 C54 22 52 25 49 27 L48 44 L44 44 L43 31 L22 31 L20 44 L16 44 L15 30 C12 28 11 23 14 20 Z"/><circle cx="54" cy="11.5" r="1.3" class="eye"/></g><g class="sit"><path class="tail" d="M20 44 C13 45 9 42 8 38" fill="none" stroke-width="4.5" stroke-linecap="round"/><path class="body" d="M22 44 C16 44 15 38 18 32 C20 26 26 22 34 21 L38 10 C39 7 42 6 44 8 L46 10 L52 12 C54 13 54 16 52 17 L47 19 C46 23 44 25 42 26 L41 44 L37 44 L36 36 L32 40 L32 44 Z"/><circle cx="46" cy="12.5" r="1.3" class="eye"/></g></svg>
+  <span class="emoji">🐕</span>
+</div>
+
+<div class="lightbox" id="lightbox" hidden><button class="lb-close" aria-label="Cerrar">×</button><img alt=""></div>
+
+<script src="js/app.js?v=10" defer></script>
+<script type="module" src="js/journey.js?v=10"></script>
+</body>
+</html>
