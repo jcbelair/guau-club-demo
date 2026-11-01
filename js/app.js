@@ -23,6 +23,13 @@
       gate && gate.classList.add('done');
       document.body.classList.remove('loading');
       revealScan();
+  // red de seguridad: si un IO no dispara, mostramos lo que ya está en pantalla
+  setTimeout(() => {
+    $$('.reveal:not(.in)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < innerHeight * 1.1 && r.bottom > -80) el.classList.add('in');
+    });
+  }, 2600);
     }, QA ? 60 : 420);
   }
   addEventListener('load', () => setTimeout(openGate, QA ? 100 : 900));
@@ -62,6 +69,13 @@
     });
   }
   revealScan();
+  // red de seguridad: si un IO no dispara, mostramos lo que ya está en pantalla
+  setTimeout(() => {
+    $$('.reveal:not(.in)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < innerHeight * 1.1 && r.bottom > -80) el.classList.add('in');
+    });
+  }, 2600);
 
   /* ---------------- parallax ---------------- */
   const px = $$('[data-parallax]');
