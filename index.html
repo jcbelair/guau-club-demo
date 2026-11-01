@@ -15,8 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero.jpg">
-<link rel="stylesheet" href="css/site.css?v=11">
-<link rel="stylesheet" href="css/journey.css?v=11">
+<link rel="stylesheet" href="css/site.css?v=12">
 <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
 <script>window.__errs=[];addEventListener('error',e=>window.__errs.push(String(e.message||e)));addEventListener('unhandledrejection',e=>window.__errs.push('promise: '+String(e.reason&&e.reason.message||e.reason)));</script>
 </head>
@@ -40,7 +39,7 @@
   </a>
   <nav class="nav-links" id="nav-links" aria-label="Principal">
     <a href="#club">El club</a>
-    <a href="#recorrido">Recorrido 3D</a>
+    <a href="recorrido.html">Recorrido 3D</a>
     <a href="#servicios">Servicios</a>
     <a href="#restaurante">Restaurante</a>
     <a href="#contacto">Contacto</a>
@@ -69,7 +68,7 @@
     <p class="hero-lead">¡Guau! Un lugar donde nos podremos divertir y también aprender, rodeados de naturaleza en un ambiente sano y seguro.</p>
     <div class="hero-cta">
       <a class="btn btn-gold" href="mailto:hola@guau.club?subject=Agendar%20una%20visita">Agendar una visita</a>
-      <a class="btn btn-line light" href="#recorrido">Recorrer el club en 3D</a>
+      <a class="btn btn-line light" href="recorrido.html">Recorrer el club en 3D</a>
     </div>
   </div>
   <div class="hero-foot">
@@ -123,45 +122,18 @@
   </div>
 </section>
 
-<!-- JOURNEY 3D -->
-<section id="recorrido" class="journey" aria-label="Recorrido 3D por el club">
-  <div class="journey-sticky">
-    <canvas id="scene" aria-label="Recorrido 3D: un perro camina por el bosque del club hacia el lago de Valle de Bravo" role="img"></canvas>
-    <div class="j-grain" aria-hidden="true"></div>
-    <div class="j-vignette" aria-hidden="true"></div>
-
-    <div class="j-ui">
-      <div class="j-top">
-        <p class="eyebrow light j-label"><span class="j-dot" aria-hidden="true"></span> El recorrido</p>
-        <div class="j-top-right">
-          <span class="j-count" id="j-count">01 / 08</span>
-          <button class="btn btn-line light sm" id="j-list" aria-pressed="false">Ver en lista</button>
-        </div>
-      </div>
-
-      <div class="j-mid">
-        <article class="j-card" id="j-card" aria-live="polite"></article>
-      </div>
-
-      <div class="j-bottom">
-        <nav class="j-rail" id="j-rail" aria-label="Estaciones del recorrido"></nav>
-        <div class="j-hint" id="j-hint"><span>Desliza para caminar</span><i></i></div>
-        <div class="j-prog" aria-hidden="true"><span id="j-prog"></span></div>
-      </div>
+<!-- TEASER RECORRIDO 3D -->
+<section id="recorrido" class="teaser" aria-label="Recorrido 3D">
+  <div class="teaser-media" data-parallax="0.1"><img src="img/campus.jpg" alt="Instalaciones del club al atardecer" loading="lazy"></div>
+  <span class="teaser-scrim"></span>
+  <div class="teaser-in">
+    <p class="eyebrow light reveal">Experiencia inmersiva</p>
+    <h2 class="reveal">Recorre el club<br><em>antes de venir</em></h2>
+    <p class="reveal">Ocho estaciones en 3D: el portón, la pista de adiestramiento, el hospedaje, la guardería, la estética, el restaurante y el mirador al lago. Se recorre deslizando, como un paseo.</p>
+    <div class="reveal teaser-cta">
+      <a class="btn btn-gold" href="recorrido.html">Entrar al recorrido 3D</a>
+      <a class="btn btn-line light" href="#servicios">Ver servicios</a>
     </div>
-
-    <div class="j-loader" id="j-loader">
-      <p class="j-loadmark">Preparando el bosque</p>
-      <div class="j-loadbar"><span id="j-loadprog"></span></div>
-    </div>
-  </div>
-</section>
-
-<!-- LISTA (accesible / fallback) -->
-<section class="section lista" id="lista" aria-label="El recorrido en texto">
-  <div class="wrap">
-    <p class="eyebrow reveal">El recorrido, en palabras</p>
-    <div class="lista-grid" id="lista-grid"><!-- injected --></div>
   </div>
 </section>
 
@@ -249,7 +221,7 @@
     <div class="foot-cols">
       <div>
         <p class="eyebrow">Club</p>
-        <a href="#club">El club</a><a href="#recorrido">Recorrido 3D</a><a href="#servicios">Servicios</a><a href="#restaurante">Restaurante</a>
+        <a href="#club">El club</a><a href="recorrido.html">Recorrido 3D</a><a href="#servicios">Servicios</a><a href="#restaurante">Restaurante</a>
       </div>
       <div>
         <p class="eyebrow">Contacto</p>
@@ -275,7 +247,6 @@
 
 <div class="lightbox" id="lightbox" hidden><button class="lb-close" aria-label="Cerrar">×</button><img alt=""></div>
 
-<script src="js/app.js?v=11" defer></script>
-<script type="module" src="js/journey.js?v=11"></script>
+<script src="js/app.js?v=12" defer></script>
 </body>
 </html>

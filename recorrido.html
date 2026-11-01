@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Recorrido 3D · Guau Country Club, Valle de Bravo</title>
+<meta name="description" content="Camina por Guau Country Club en 3D: portón, pista de adiestramiento, hospedaje, guardería, estética, restaurante y el mirador al lago.">
+<meta name="theme-color" content="#12211a">
+<link rel="icon" href="img/coa.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css?v=12">
+<link rel="stylesheet" href="css/journey.css?v=12">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+<script>window.__errs=[];addEventListener('error',e=>window.__errs.push(String(e.message||e)));addEventListener('unhandledrejection',e=>window.__errs.push('promise: '+String(e.reason&&e.reason.message||e.reason)));</script>
+</head>
+<body class="page-recorrido">
+
+<header class="nav solid bar" id="nav">
+  <a class="brand" href="index.html"><span class="brand-1">Guau</span><span class="brand-2">Country&nbsp;Club · Valle&nbsp;de&nbsp;Bravo</span></a>
+  <div class="bar-links">
+    <a class="bar-back" href="index.html">← Volver al club</a>
+    <button class="ghost" id="sound" aria-pressed="false" title="Sonido ambiente"><span aria-hidden="true">♪</span><span class="sr">Sonido ambiente</span></button>
+    <a class="btn btn-solid" href="mailto:hola@guau.club?subject=Agendar%20una%20visita%20a%20Guau%20Country%20Club">Agendar visita</a>
+  </div>
+</header>
+
+<main>
+  <section id="recorrido" class="journey" aria-label="Recorrido 3D por el club">
+    <div class="journey-sticky">
+      <canvas id="scene" aria-label="Recorrido 3D: un perro camina por el bosque del club hacia el lago de Valle de Bravo" role="img"></canvas>
+      <div class="j-grain" aria-hidden="true"></div>
+      <div class="j-vignette" aria-hidden="true"></div>
+
+      <div class="j-ui">
+        <div class="j-top">
+          <p class="eyebrow light j-label"><span class="j-dot" aria-hidden="true"></span> El recorrido</p>
+          <div class="j-top-right">
+            <span class="j-count" id="j-count">01 / 08</span>
+            <button class="btn btn-line light sm" id="j-list" aria-pressed="false">Ver en lista</button>
+          </div>
+        </div>
+
+        <div class="j-mid">
+          <article class="j-card" id="j-card" aria-live="polite"></article>
+        </div>
+
+        <div class="j-bottom">
+          <nav class="j-rail" id="j-rail" aria-label="Estaciones del recorrido"></nav>
+          <div class="j-hint" id="j-hint"><span>Desliza para caminar</span><i></i></div>
+          <div class="j-prog" aria-hidden="true"><span id="j-prog"></span></div>
+        </div>
+      </div>
+
+      <div class="j-loader" id="j-loader">
+        <p class="j-loadmark">Preparando el bosque</p>
+        <div class="j-loadbar"><span id="j-loadprog"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section lista" id="lista" aria-label="El recorrido en texto">
+    <div class="wrap">
+      <p class="eyebrow reveal">El recorrido, en palabras</p>
+      <h2 class="reveal" style="max-width:20ch">Ocho estaciones, <em>un solo paseo</em></h2>
+      <div class="lista-grid" id="lista-grid"></div>
+      <p style="margin-top:44px"><a class="btn btn-solid" href="index.html">← Volver al club</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="foot-mark">Guau</p>
+    <div class="foot-legal">
+      <p class="tiny">Demostración no oficial · Guau Country Club © 2026.</p>
+      <p class="tiny">Modelo 3D «German Shepard» por Quaternius (Poly Pizza), CC BY 3.0.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js?v=12" defer></script>
+<script type="module" src="js/journey.js?v=12"></script>
+</body>
+</html>

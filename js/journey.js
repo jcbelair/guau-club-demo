@@ -931,6 +931,10 @@ async function start() {
 
   function frame() {
     requestAnimationFrame(frame);
+    try { tick(); } catch (e) { if (!window.__frameErr) window.__frameErr = String(e && e.stack || e); }
+  }
+  let frameN = 0;
+  function tick() {
     const dt = Math.min(clock.getDelta(), .05), T = clock.elapsedTime;
     seekFromScroll();
     if (!visible) return;
@@ -1037,6 +1041,7 @@ async function start() {
 
   if (Q.has('t')) uS = .02 + clamp(parseFloat(Q.get('t')) || 0) * .965;
   if (QA) document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  window.__setActive = setActive;
   setActive(0);
   frame();
 }
