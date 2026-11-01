@@ -601,9 +601,9 @@ async function start() {
       bar.rotation.z = Math.PI / 2;
     }
     for (let k = 0; k < 6; k++) add(new THREE.CylinderGeometry(.035, .035, 1.25), k % 2 ? goldM : ivoryM, -3.2, .62, -3 + k * 1.1, g);
-    const tf = new THREE.Group(); tf.position.set(3.1, 0, 0); g.add(tf);
+    const tf = new THREE.Group(); tf.position.set(6.4, 0, -2.6); tf.scale.setScalar(.9); g.add(tf);
     [-.85, .85].forEach(x => add(new THREE.CylinderGeometry(.06, .06, 2.3), greenM, x, 1.15, 0, tf));
-    add(new THREE.TorusGeometry(.52, .1, 12, 36), M(0x242424, { roughness: .9 }), 0, 1.35, 0, tf);
+    add(new THREE.TorusGeometry(.46, .09, 12, 36), M(0x4a4238, { roughness: .82, metalness: .15 }), 0, 1.35, 0, tf);
   }
   /* 2 · hospedaje */
   {
@@ -745,7 +745,7 @@ async function start() {
     });
     // El GLB está modelado a escala métrica real; el bounding box de bind-pose
     // está "explotado" por el rig, así que no se escala por bbox.
-    model.scale.setScalar(.95);
+    model.scale.setScalar(1.14);
     model.position.y = -.02;
     dogInner.add(model);
     mixer = new THREE.AnimationMixer(model);
@@ -887,7 +887,7 @@ async function start() {
   const CAMK = [
     { u: 0.00, back: 6.4, h: 2.3, side: 1.5, ahead: 2.6, lookY: .85, fov: 42 },
     { u: 0.09, back: 3.9, h: 1.55, side: 1.3, ahead: 1.7, lookY: .52, fov: 39 },
-    { u: 0.30, back: 3.7, h: 1.5, side: 1.6, ahead: 1.6, lookY: .48, fov: 36 },
+    { u: 0.30, back: 3.5, h: 1.45, side: 1.6, ahead: 1.55, lookY: .46, fov: 36 },
     { u: 0.50, back: 3.8, h: 1.5, side: .45, ahead: 1.6, lookY: .48, fov: 36 },
     { u: 0.66, back: 3.9, h: 1.55, side: -1.6, ahead: 1.7, lookY: .5, fov: 36 },
     { u: 0.82, back: 6.0, h: 2.2, side: -1.9, ahead: 3.2, lookY: .7, fov: 40 },
